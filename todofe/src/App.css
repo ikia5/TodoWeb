@@ -1,0 +1,183 @@
+.container{
+  width: 100%;
+}
+.app-container{
+  width: 60%;
+  min-width: 30rem;
+  height: auto;
+  border: 3px solid #dddddd;
+  border-radius: 10px;
+  margin: auto;
+}
+.app-container h1{
+  text-align: center;
+}
+.action-form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: 1;
+}
+.task-input, .select-input{
+  height: 2rem;
+  width: 40%;
+  min-width: 17.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background-color: #ffffff;
+  border: 2px solid #dddddd;
+  border-radius: 8px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+  color: #111111;
+  font-weight: 600;
+}
+.select-input{
+  box-sizing: border-box;
+  height: 2.3rem;
+  width: 40%;
+  min-width: 19.73rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.select-input option {
+  font-weight: 600;
+  cursor: pointer; /* Show pointer on each option */
+}
+
+.submit{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-btn{
+  margin-top: 17px;
+  margin-left: auto;
+  margin-right: 15%;
+  height: 1.7rem;
+  width: 10rem;
+  color: white;
+  background-color: rgb(90, 90, 255);
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover{
+  background-color: rgb(41, 41, 255);
+  cursor: pointer;
+}
+
+.submit-btn:active{
+  background-color: rgb(131, 131, 255);
+  cursor: pointer;
+}
+
+.filter-task{
+  margin-top: 1rem;
+  width: 10rem;
+  height: 1.5rem;
+  background-color: #ffffff;
+  margin-left: 15%;
+  font-weight: 600;
+  border-radius: 5px;
+  padding-left: 8px;
+  color: #313131;
+}
+
+.table{
+  margin: 1rem auto 2rem;
+  width: 70%;
+  border-collapse: collapse;
+}
+
+.table th:first-child{
+  border-top-left-radius: 5px;
+}
+
+.table th:last-child{
+  border-top-right-radius: 5px;
+}
+
+.header-table th {
+  border-right: 1px solid #242424;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+  background-color: #f2f2f2;
+  color: #313131;
+}
+
+.header-table th:last-child {
+  border-right: none;
+}
+
+td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+.status-change:hover {
+  cursor: pointer;
+  background-color: #787878;
+}
+
+.body-table{
+  font-weight: 600;
+}
+
+th:first-child, td:first-child {
+  width: 40%;
+}
+
+th:not(:first-child), td:not(:first-child) {
+  width: 20%;
+}
+
+.status-change {
+  cursor: pointer;
+}
+
+.status-change.incomplete {
+  color: rgb(255, 92, 92);
+}
+
+.status-change.complete {
+  color: rgb(126, 255, 126);
+}
+
+.delete-btn{
+  display: flex;
+  width: 3.5rem;
+  height: 1.5rem;
+  margin: auto;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: rgb(255, 76, 76);
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover{
+  background-color: rgb(255, 12, 12);
+  cursor: pointer;
+}
+
+@media(max-width: 75rem){
+  .action-form{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+}

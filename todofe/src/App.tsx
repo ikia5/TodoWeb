@@ -6,28 +6,27 @@ type Task = {
   id: number;
   name: string;
   importance: string;
-  status: string;
+  status: boolean;
 };
-
 function App() {
   const [tasks, setTasks] = useState<Task[]>([
     {
       id: 1,
       name: "Lập trình React",
       importance: "Bắt buộc",
-      status: "Chưa hoàn thành",
+      status: false,
     },
     {
       id: 2,
       name: "Lập trình Node",
       importance: "Bắt buộc",
-      status: "Chưa hoàn thành",
+      status: false,
     },
     {
       id: 3,
       name: "Lập trình Vue",
       importance: "Bắt buộc",
-      status: "Đã hoàn thành",
+      status: true,
     },
   ]);
 
@@ -45,7 +44,7 @@ function App() {
       id: tasks.length + 1,
       name: newTask,
       importance: taskImportance === "must" ? "Bắt buộc" : "Không bắt buộc",
-      status: "Chưa hoàn thành",
+      status: false,
     };
 
     setTasks([...tasks, task]);
@@ -57,15 +56,7 @@ function App() {
   const toggleTaskStatus = (id: number) => {
     setTasks(
       tasks.map((task) =>
-        task.id === id
-          ? {
-              ...task,
-              status:
-                task.status === "Chưa hoàn thành"
-                  ? "Đã hoàn thành"
-                  : "Chưa hoàn thành",
-            }
-          : task
+        task.id === id ? { ...task, status: !task.status } : task
       )
     );
   };
@@ -127,21 +118,16 @@ function App() {
             </thead>
             <tbody className="body-table">
               {filteredTasks.map((task) => (
-                <tr
-                  key={task.id}
-                  className={task.status === "Đã hoàn thành" ? "completed" : ""}
-                >
+                <tr key={task.id} className={task.status ? "completed" : ""}>
                   <td>{task.name}</td>
                   <td>{task.importance}</td>
                   <td
                     className={`status-change ${
-                      task.status === "Đã hoàn thành"
-                        ? "complete"
-                        : "incomplete"
+                      task.status ? "complete" : "incomplete"
                     }`}
                     onClick={() => toggleTaskStatus(task.id)}
                   >
-                    {task.status}
+                    {task.status ? "Đã hoàn thành" : "Chưa hoàn thành"}
                   </td>
 
                   <td className="delete-column">

@@ -4,7 +4,7 @@ const app = express()
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-mongoose.connect("Your database url");
+mongoose.connect(" ----------- YOUR DATABASE URL -----------");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

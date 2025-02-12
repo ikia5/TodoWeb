@@ -4,7 +4,7 @@ const app = express()
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://duong3456789:1111@cluster0.x76l8mw.mongodb.net/todoweb");
+mongoose.connect("Your database url");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
